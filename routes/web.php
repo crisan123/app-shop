@@ -1,0 +1,30 @@
+<?php
+
+// RUTAS EN ESTE CASO REFIERE A WELCOME QUE ESTA DEFINIDA EN LA CARPETA RESOURSES/VIEWS.
+/*
+//********************************************************
+Route::get('/', function () {
+    return view('welcome');
+});
+//********************************************************
+*/
+// ESTA RUTA EN ESTE CASO NO EXISTE UN ARCHIVO EN RESOURSES/VIEWS, PERO DE IGUAL MANERA ME RETORNA UNA PAGINA LA CUAL NOS MUESTRA LO QUE CONTIENE EL RETURN.
+
+/*Route::get('/prueba', function(){
+	return 'hola soy una ruta de prueba';
+});*/
+
+// EN ESTA RUTA VAMOS A USAR LO QUE TENEMOS EN EL CONTROLLER LOS CONTROLLER SE USAN POR ORDEN Y AYUDA A MANTENER NUESTRO PROYECTO ORDENADO.
+//LOS CONTROLADORES SE UBICAN EN APP/HTTP/CONTROLLERS
+// DE ESTA MANERA SE USA  UN CONTROLADOR EN ESTE CASO TESTCONTROLLER DE LA SIGUIENTE MANERA.
+
+Route::get('/', 'TestController@welcome');
+
+// EN ESTA RUTA RECIBIMOS UNOS PARAMETROS DE UNA SUMA QUE SE HIZO EN EL TESTCONTROLLER EN EL METODO NUMEROS.
+
+//Route::get('/numeros', 'TestController@numeros');
+
+// RUTAS DE AUTENTICACION GENERADAS POR LARAVEL
+Auth::routes();
+// ESTO  TOMADO DE LA CARPETA CONTROLLERS DEL CONTROLADOR HOMECONTROLLER Y DEL METODO INDEX.
+Route::get('/home', 'HomeController@index')->name('home');
