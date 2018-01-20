@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('body-class', 'signup-page') 
+@section('titulo', 'RESTABLECER CONTRASEÑA')
+
+
 @section('content')
 <div class="container">
     <div class="row">
